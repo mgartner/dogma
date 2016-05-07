@@ -23,7 +23,8 @@ defmodule Dogma.ConfigTest do
     TemporaryEnv.delete( :dogma, :rule_set ) do
       TemporaryEnv.delete( :dogma, :override ) do
 
-        assert Dogma.RuleSet.All.rules == Config.build.rules
+        assert Enum.sort(Dogma.RuleSet.All.rules) ==
+          Enum.sort(Config.build.rules)
 
       end
     end

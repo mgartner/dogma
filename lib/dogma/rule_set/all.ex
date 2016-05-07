@@ -10,6 +10,7 @@ defmodule Dogma.RuleSet.All do
 
   def rules do
     [
+      %Rule.AtomName{},
       %Rule.CommentFormat{},
       %Rule.ComparisonToBoolean{},
       %Rule.DebuggerStatement{},

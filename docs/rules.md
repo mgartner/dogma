@@ -1,10 +1,11 @@
 # Dogma Rules
 
 These are the rules included in Dogma by default. Currently there are
-32 of them.
+33 of them.
 
 ## Contents
 
+* [AtomName](#atomname)
 * [CommentFormat](#commentformat)
 * [ComparisonToBoolean](#comparisontoboolean)
 * [DebuggerStatement](#debuggerstatement)
@@ -40,6 +41,24 @@ These are the rules included in Dogma by default. Currently there are
 
 
 ---
+
+### AtomName
+
+A rule that disallows atom names not in `snake_case` or `SNAKE_CASE`.
+
+Good:
+
+    status = :good_to_go
+    format = :HTML
+    {:ok, :green_light} = light
+
+Bad:
+
+    status = :goodToGo
+    {:ok, :greenLight} = light
+
+Th `SNAKE_CASE` format can be disallowed with `max_length` option set to `false`.
+
 
 ### CommentFormat
 

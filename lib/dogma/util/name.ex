@@ -79,4 +79,25 @@ defmodule Dogma.Util.Name do
   def not_pascal_case?(name) do
     not pascal_case?(name)
   end
+
+  @doc """
+  Returns true if the name consists of only uppercase letters
+  and underscores.
+
+      iex> Dogma.Util.Name.upper_snake_case?("OK")
+      true
+
+      iex> Dogma.Util.Name.upper_snake_case?("FOO_BAR")
+      true
+
+      iex> Dogma.Util.Name.upper_snake_case?("FOObar")
+      false
+
+      iex> Dogma.Util.Name.upper_snake_case?("123")
+      false
+  """
+  def upper_snake_case?(name) do
+    name |> String.match?(~r/^[A-Z_]+$/)
+  end
+
 end
